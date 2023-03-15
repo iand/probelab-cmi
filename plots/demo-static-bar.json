@@ -1,0 +1,25 @@
+{
+  "datasets": [
+    {
+      "name":"main",
+      "source":"demo",
+      "query":"populations"
+    }
+  ],
+
+  "series": [
+    {
+      "type": "bar",
+      "name": "population",
+      "dataset": "main",
+      "labels": "creature",
+      "values": "month1"
+    }
+  ],
+
+  "layout":{
+    "title":{
+      "text":"Demo: Bar"
+    }
+  }
+}

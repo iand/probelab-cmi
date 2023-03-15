@@ -1,0 +1,25 @@
+{
+  "datasets": [
+    {
+      "name":"main",
+      "source":"pgnebula",
+      "query":"select av.agent_version as version, count(DISTINCT v.peer_id) as number from visits v inner join agent_versions av on av.id = v.agent_version_id where v.visit_started_at >= '2023-03-06 00:00:00'::TIMESTAMP and v.visit_started_at < '2023-03-13 00:00:00'::TIMESTAMP AND v.type = 'crawl' AND v.connect_error IS NULL group by av.agent_version order by 2 desc limit 10;"
+    }
+  ],
+
+  "series": [
+    {
+      "type": "bar",
+      "name": "agents",
+      "dataset": "main",
+      "labels": "version",
+      "values": "number"
+    }
+  ],
+
+  "layout":{
+    "title":{
+      "text":"Demo: Postgres Agents"
+    }
+  }
+}

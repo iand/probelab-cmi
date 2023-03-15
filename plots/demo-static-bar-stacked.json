@@ -1,0 +1,33 @@
+{
+  "datasets": [
+    {
+      "name":"main",
+      "source":"demo",
+      "query":"populations"
+    }
+  ],
+
+  "series": [
+    {
+      "type": "bar",
+      "name": "month 1",
+      "dataset": "main",
+      "labels": "creature",
+      "values": "month1"
+    },
+    {
+      "type": "bar",
+      "name": "month 2",
+      "dataset": "main",
+      "labels": "creature",
+      "values": "month2"
+    }
+  ],
+
+  "layout":{
+    "barmode":"stack",
+    "title":{
+      "text":"Demo: Stacked Bars"
+    }
+  }
+}
